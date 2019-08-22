@@ -13,17 +13,18 @@ const uncheckedCountSpan = document.getElementById('unchecked-count')
 function newTodo() {
   let toDoText = window.prompt("Enter your new to do" , "");
   if( toDoText ){
-	  let elToDo = document.createElement("li");
-	  elToDo.className = classNames.TODO_ITEM;
-	  elToDo.innerHTML = `<input type="checkbox" class="${classNames.TODO_CHECKBOX}"/>
-		  				<span class="${classNames.TODO_TEXT}">${toDoText}</span>
-		  				<button type="button" class="${classNames.TODO_DELETE}">Delete</button>`;
-	 
-	 list.append(elToDo);
+	  
+	  list.insertAdjacentHTML("beforeend", 
+			  `<li class="${classNames.TODO_ITEM}">
+			  	<input type="checkbox" class="${classNames.TODO_CHECKBOX}"/>
+			  	<span class="${classNames.TODO_TEXT}">${toDoText}</span>
+			  	<button type="button" class="${classNames.TODO_DELETE}">Delete</button>
+			  </li>`
+	  );
 	 updateCount();
 		 
   } else {
-	  alert('To do was cancelled')
+	  alert('To do was cancelled');
   }
   
 }
