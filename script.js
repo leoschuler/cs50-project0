@@ -30,11 +30,11 @@ function newTodo() {
 
 function updateCount() {
 
-	let toDos = document.querySelectorAll("."+classNames.TODO_CHECKBOX);
+	let toDos = document.querySelectorAll("."+classNames.TODO_ITEM);
 	let uncheckedToDos = document.querySelectorAll("."+classNames.TODO_CHECKBOX+":not(:checked)");
 	
-	document.getElementById("item-count").innerHTML = toDos.length;
-	document.getElementById("unchecked-count").innerHTML = uncheckedToDos.length;
+	itemCountSpan.innerHTML = toDos.length;
+	uncheckedCountSpan.innerHTML = uncheckedToDos.length;
 }
 
 //event triggered by all onchange event triggered inside the list (even for nodes not yet registered)
